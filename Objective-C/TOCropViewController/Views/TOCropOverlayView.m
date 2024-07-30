@@ -23,6 +23,7 @@
 #import "TOCropOverlayView.h"
 
 static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
+static const CGFloat kTOCropOverLayerEdgeWidth = 36.0f;
 
 @interface TOCropOverlayView ()
 
@@ -30,6 +31,8 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
 @property (nonatomic, strong) NSArray *verticalGridLines;
 
 @property (nonatomic, strong) NSArray *outerLineViews;   //top, right, bottom, left
+
+@property (nonatomic, strong) NSArray *edgeLineViews;    //top, right, bottom, left
 
 @property (nonatomic, strong) NSArray *topLeftLineViews; //vertical, horizontal
 @property (nonatomic, strong) NSArray *bottomLeftLineViews;
@@ -57,6 +60,8 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
     };
 
     _outerLineViews     = @[newLineView(), newLineView(), newLineView(), newLineView()];
+    
+    _edgeLineViews     = @[newLineView(), newLineView(), newLineView(), newLineView()];
     
     _topLeftLineViews   = @[newLineView(), newLineView()];
     _bottomLeftLineViews = @[newLineView(), newLineView()];
@@ -88,7 +93,7 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
     CGSize boundsSize = self.bounds.size;
     
     //border lines
-    for (NSInteger i = 0; i < 4; i++) {
+    for (NSInteger i = 0; i < self.outerLineViews.count; i++) {
         UIView *lineView = self.outerLineViews[i];
         
         CGRect frame = CGRectZero;
@@ -97,6 +102,24 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
             case 1: frame = (CGRect){boundsSize.width,0.0f,1.0f,boundsSize.height}; break; //right
             case 2: frame = (CGRect){-1.0f,boundsSize.height,boundsSize.width+2.0f,1.0f}; break; //bottom
             case 3: frame = (CGRect){-1.0f,0,1.0f,boundsSize.height+1.0f}; break; //left
+        }
+        
+        lineView.frame = frame;
+    }
+    
+    //edge lines
+    for (NSInteger i = 0; i < self.edgeLineViews.count; i++) {
+        UIView *lineView = self.edgeLineViews[i];
+        
+        CGFloat midX = CGRectGetMidX(self.bounds) - kTOCropOverLayerEdgeWidth / 2.0f;
+        CGFloat midY = CGRectGetMidY(self.bounds) - kTOCropOverLayerEdgeWidth / 2.0f;
+        
+        CGRect frame = CGRectZero;
+        switch (i) {
+            case 0: frame = (CGRect){midX,-3.0f,kTOCropOverLayerEdgeWidth,3.0f}; break; //top
+            case 1: frame = (CGRect){boundsSize.width,midY,3.0f,kTOCropOverLayerEdgeWidth}; break; //right
+            case 2: frame = (CGRect){midX,boundsSize.height,kTOCropOverLayerEdgeWidth,3.0f}; break; //bottom
+            case 3: frame = (CGRect){-3.0f,midY,3.0f,kTOCropOverLayerEdgeWidth}; break; //left
         }
         
         lineView.frame = frame;
