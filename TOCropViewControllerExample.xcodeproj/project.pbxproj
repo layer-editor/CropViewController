@@ -645,31 +645,25 @@
 				TargetAttributes = {
 					144B8CC81D22CAFF0085D774 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6LF3GMKZAB;
 						LastSwiftMigration = 0810;
 					};
 					220611961B2E6777001A467B = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = 6LF3GMKZAB;
 						TestTargetID = 223424691ABBC0CD00BBC2B1;
 					};
 					223424691ABBC0CD00BBC2B1 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 6LF3GMKZAB;
 					};
 					2238CF1F1FC0269C0081B957 = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = 6LF3GMKZAB;
 						ProvisioningStyle = Automatic;
 					};
 					2238CF3B1FC029A90081B957 = {
 						CreatedOnToolsVersion = 9.1;
-						DevelopmentTeam = 6LF3GMKZAB;
 						ProvisioningStyle = Automatic;
 					};
 					2F5062DB1F53E2D900AA9F14 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6LF3GMKZAB;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -980,12 +974,12 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1002,8 +996,9 @@
 				MARKETING_VERSION = 2.7.4;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOCropViewController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1021,12 +1016,12 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1043,8 +1038,9 @@
 				MARKETING_VERSION = 2.7.4;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOCropViewController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1060,7 +1056,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1073,7 +1069,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.timoliver.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = come.layereditor.CropViewControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1087,7 +1083,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Objective-C/TOCropViewControllerTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1096,7 +1092,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.timoliver.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = come.layereditor.CropViewControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1223,7 +1219,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Objective-C/TOCropViewControllerExample/TOCropViewControllerExample.entitlements";
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1235,7 +1231,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOCropViewControllerExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1248,7 +1244,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Objective-C/TOCropViewControllerExample/TOCropViewControllerExample.entitlements";
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1260,7 +1256,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.TOCropViewControllerExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -1280,7 +1276,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Swift/CropViewControllerExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1288,7 +1284,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.CropViewControllerExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift/CropViewControllerExample/CropViewController-Bridging-Header.h";
@@ -1308,7 +1304,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Swift/CropViewControllerExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1316,7 +1312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.CropViewControllerExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewControllerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift/CropViewControllerExample/CropViewController-Bridging-Header.h";
@@ -1334,13 +1330,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1357,7 +1352,7 @@
 				MARKETING_VERSION = 2.7.4;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.CropViewController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewController;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
@@ -1379,13 +1374,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1402,7 +1396,7 @@
 				MARKETING_VERSION = 2.7.4;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
-				PRODUCT_BUNDLE_IDENTIFIER = dev.tim.CropViewController;
+				PRODUCT_BUNDLE_IDENTIFIER = com.layereditor.CropViewController;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
@@ -1425,7 +1419,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					TARGET_APP_EXTENSION,
@@ -1438,7 +1432,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.tim.TOCropViewControllerExample.TOCropViewController-ShareExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.layereditor.CropViewControllerExample.CropViewController-ShareExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
@@ -1458,7 +1452,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6LF3GMKZAB;
+				DEVELOPMENT_TEAM = 638YWG6MC5;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Objective-C/TOCropViewControllerExample-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1467,7 +1461,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.tim.TOCropViewControllerExample.TOCropViewController-ShareExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.layereditor.CropViewControllerExample.CropViewController-ShareExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";

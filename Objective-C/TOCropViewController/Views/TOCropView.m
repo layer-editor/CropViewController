@@ -143,6 +143,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.cropBoxResizeEnabled = !circularMode;
     self.aspectRatio = circularMode ? (CGSize){1.0f, 1.0f} : CGSizeZero;
     self.resetAspectRatioEnabled = !circularMode;
+    self.aspectRatioLockCornersEnabled = YES;
     self.restoreImageCropFrame = CGRectZero;
     self.restoreAngle = 0;
     self.cropAdjustingDelay = kTOCropTimerDuration;
@@ -433,6 +434,8 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     //ensure we can properly clamp the XY value of the box if it overruns the minimum size
     //(Otherwise the image itself will slide with the drag gesture)
     BOOL clampMinFromTop = NO, clampMinFromLeft = NO;
+    
+    BOOL shouldAspectLockCorners = self.aspectRatioLockEnabled || self.aspectRatioLockCornersEnabled;
 
     switch (self.tappedEdge) {
         case TOCropViewOverlayEdgeLeft:
@@ -513,7 +516,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             
             break;
         case TOCropViewOverlayEdgeTopLeft:
-            if (self.aspectRatioLockEnabled) {
+            if (shouldAspectLockCorners) {
                 xDelta = MAX(xDelta, 0);
                 yDelta = MAX(yDelta, 0);
                 
@@ -548,7 +551,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             
             break;
         case TOCropViewOverlayEdgeTopRight:
-            if (self.aspectRatioLockEnabled) {
+            if (shouldAspectLockCorners) {
                 xDelta = MIN(xDelta, 0);
                 yDelta = MAX(yDelta, 0);
                 
@@ -580,7 +583,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             
             break;
         case TOCropViewOverlayEdgeBottomLeft:
-            if (self.aspectRatioLockEnabled) {
+            if (shouldAspectLockCorners) {
                 CGPoint distance;
                 distance.x = 1.0f - (xDelta / CGRectGetWidth(originFrame));
                 distance.y = 1.0f - (-yDelta / CGRectGetHeight(originFrame));
@@ -609,7 +612,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             
             break;
         case TOCropViewOverlayEdgeBottomRight:
-            if (self.aspectRatioLockEnabled) {
+            if (shouldAspectLockCorners) {
                 
                 CGPoint distance;
                 distance.x = 1.0f - ((-1 * xDelta) / CGRectGetWidth(originFrame));
@@ -641,12 +644,12 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     CGSize maxSize = (CGSize){CGRectGetWidth(contentFrame), CGRectGetHeight(contentFrame)};
     
     //clamp the box to ensure it doesn't go beyond the bounds we've set
-    if (self.aspectRatioLockEnabled && aspectHorizontal) {
+    if ((self.aspectRatioLockEnabled || self.aspectRatioLockCornersEnabled) && aspectHorizontal) {
         maxSize.height = contentFrame.size.width / aspectRatio;
         minSize.width = kTOCropViewMinimumBoxSize * aspectRatio;
     }
         
-    if (self.aspectRatioLockEnabled && aspectVertical) {
+    if ((self.aspectRatioLockEnabled || self.aspectRatioLockCornersEnabled) && aspectVertical) {
         maxSize.width = contentFrame.size.height * aspectRatio;
         minSize.height = kTOCropViewMinimumBoxSize / aspectRatio;
     }

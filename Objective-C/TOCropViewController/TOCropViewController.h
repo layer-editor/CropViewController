@@ -225,6 +225,8 @@
  */
 @property (nonatomic, assign) BOOL aspectRatioLockEnabled;
 
+@property (nonatomic, assign) BOOL aspectRatioLockCornersEnabled;
+
 /** 
  If true, tapping the reset button will also reset the aspect ratio back to the image
  default ratio. Otherwise, the reset will just zoom out to the current aspect ratio.

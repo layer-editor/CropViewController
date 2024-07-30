@@ -22,6 +22,7 @@ class ViewController: UIViewController, CropViewControllerDelegate, UIImagePicke
         guard let image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage) else { return }
         
         let cropController = CropViewController(croppingStyle: croppingStyle, image: image)
+        cropController.cropView.aspectRatioLockedCornersEnabled = true
         //cropController.modalPresentationStyle = .fullScreen
         cropController.delegate = self
         
