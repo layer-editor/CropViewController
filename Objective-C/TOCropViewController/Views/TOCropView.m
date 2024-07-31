@@ -817,9 +817,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     
     /// If there was a change, and the gesture is complete, inform delegates.
     if (self.canBeReset && recognizer.state == UIGestureRecognizerStateEnded) {
-        if ([self.delegate respondsToSelector:@selector(cropView:didCropImageToRect:)]) {
-            [self.delegate cropView:self didCropImageToRect:self.cropBoxFrame];
-        }
+        [self updateDelegateForCropFrameChanged];
     }
 }
 
@@ -954,6 +952,8 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
     [self startResetTimer];
     [self checkForCanReset];
+    
+    [self updateDelegateForCropFrameChanged];
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
@@ -968,8 +968,12 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (!decelerate)
+    if (decelerate) {
+        /// Dragging case. Zoom ending would be `decelerate == false`
+        [self updateDelegateForCropFrameChanged];
+    } else {
         [self startResetTimer];
+    }
 }
 
 #pragma mark - Accessors -
@@ -1732,6 +1736,14 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     }
 
     self.canBeReset = canReset;
+}
+
+- (void)updateDelegateForCropFrameChanged
+{
+    /// If there was a change, and the gesture is complete, inform delegates.
+    if ([self.delegate respondsToSelector:@selector(cropView:didCropImageToRect:)]) {
+        [self.delegate cropView:self didCropImageToRect:self.cropBoxFrame];
+    }
 }
 
 #pragma mark - Convienience Methods -
