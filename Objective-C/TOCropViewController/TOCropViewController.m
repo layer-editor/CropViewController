@@ -715,6 +715,10 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     self.toolbar.resetButtonEnabled = NO;
 }
 
+- (void)cropView:(TOCropView *)cropView didCropImageToRect:(CGRect)rect {
+    NSLog(@"cropView didCrop to rect: %@", NSStringFromCGRect(rect));
+}
+
 #pragma mark - Presentation Handling -
 - (void)presentAnimatedFromParentViewController:(UIViewController *)viewController
                                        fromView:(UIView *)fromView

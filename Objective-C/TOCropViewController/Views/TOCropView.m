@@ -812,6 +812,15 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     }
     
     [self updateCropBoxFrameWithGesturePoint:point];
+    
+    // Delegates
+    
+    /// If there was a change, and the gesture is complete, inform delegates.
+    if (self.canBeReset && recognizer.state == UIGestureRecognizerStateEnded) {
+        if ([self.delegate respondsToSelector:@selector(cropView:didCropImageToRect:)]) {
+            [self.delegate cropView:self didCropImageToRect:self.cropBoxFrame];
+        }
+    }
 }
 
 - (void)longPressGestureRecognized:(UILongPressGestureRecognizer *)recognizer

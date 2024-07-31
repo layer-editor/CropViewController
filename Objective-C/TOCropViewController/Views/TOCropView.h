@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cropViewDidBecomeResettable:(nonnull TOCropView *)cropView;
 - (void)cropViewDidBecomeNonResettable:(nonnull TOCropView *)cropView;
 
+- (void)cropView:(nonnull TOCropView *)cropView didCropImageToRect:(CGRect)cropRect;
+
 @end
 
 @interface TOCropView : UIView
