@@ -716,7 +716,11 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 }
 
 - (void)cropView:(TOCropView *)cropView didCropImageToRect:(CGRect)rect {
-    NSLog(@"cropView didCrop to rect: %@", NSStringFromCGRect(rect));
+    NSLog(@"cropView didCrop image to: %@", NSStringFromCGRect(rect));
+}
+
+- (void)cropView:(TOCropView *)cropView didMoveImageView:(CGRect)frame {
+    NSLog(@"cropView didMove imageView to: %@", NSStringFromCGRect(frame));
 }
 
 #pragma mark - Presentation Handling -

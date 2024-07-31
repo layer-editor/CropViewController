@@ -39,6 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cropViewDidBecomeNonResettable:(nonnull TOCropView *)cropView;
 
 - (void)cropView:(nonnull TOCropView *)cropView didCropImageToRect:(CGRect)cropRect;
+- (void)cropView:(nonnull TOCropView *)cropView didMoveImageView:(CGRect)frame;
 
 @end
 

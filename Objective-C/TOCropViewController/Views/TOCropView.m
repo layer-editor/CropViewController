@@ -1368,11 +1368,13 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     };
     
     if (!animated) {
+        [self.delegate cropView:self didMoveImageView:cropFrame];
         translateBlock();
         return;
     }
 
     [self matchForegroundToBackground];
+    [self.delegate cropView:self didMoveImageView:cropFrame];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.5f
