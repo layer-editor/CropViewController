@@ -812,13 +812,6 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     }
     
     [self updateCropBoxFrameWithGesturePoint:point];
-    
-    // Delegates
-    
-    /// If there was a change, and the gesture is complete, inform delegates.
-    if (self.canBeReset && recognizer.state == UIGestureRecognizerStateEnded) {
-        [self updateDelegateForCropFrameChanged];
-    }
 }
 
 - (void)longPressGestureRecognized:(UILongPressGestureRecognizer *)recognizer
@@ -952,8 +945,6 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
     [self startResetTimer];
     [self checkForCanReset];
-    
-    [self updateDelegateForCropFrameChanged];
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
@@ -968,10 +959,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    if (decelerate) {
-        /// Dragging case. Zoom ending would be `decelerate == false`
-        [self updateDelegateForCropFrameChanged];
-    } else {
+    if (!decelerate) {
         [self startResetTimer];
     }
 }
@@ -1207,6 +1195,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 - (void)setCanBeReset:(BOOL)canReset
 {
     if (canReset == _canBeReset) {
+        [self updateDelegateForCropFrameChanged];
         return;
     }
     
